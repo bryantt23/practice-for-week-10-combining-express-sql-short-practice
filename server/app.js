@@ -10,7 +10,8 @@ const DATA_SOURCE = 'app.db';
  * Step 1 - Connect to the database
  */
 // Your code here
-
+const sqlite3 = require('sqlite3');
+const db = new sqlite3.Database(DATA_SOURCE, sqlite3.OPEN_READWRITE);
 // Express using json - DO NOT MODIFY
 app.use(express.json());
 
