@@ -31,15 +31,24 @@ app.get('/colors/:id', (req, res, next) => {
    * STEP 2A - SQL Statement
    */
   // Your code here
+  const sql = 'SELECT * FROM colors WHERE id = ?';
   /**
    * STEP 2B - SQL Parameters
    */
   // Your code here
+  const params = [req.params.id];
   /**
    * STEP 2C - Call database function
    *  - return response
    */
   // Your code here
+  db.get(sql, params, (err, row) => {
+    if (err) {
+      next(err);
+    } else {
+      res.json(row);
+    }
+  });
 });
 
 // Add color
