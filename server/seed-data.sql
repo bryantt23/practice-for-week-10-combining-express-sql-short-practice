@@ -10,3 +10,5 @@ VALUES
   ('Red'),
   ('White'),
   ('Blue');
+
+SELECT * from colors
